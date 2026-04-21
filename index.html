@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>8.2 Staying Healthy – Grade 3 ESL</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --teal:#3aab98;--teal-dark:#2d8a7a;--teal-light:#b2ece4;
+  --green:#6bc49a;--green-light:#d4f5e5;
+  --yellow:#f5d857;--orange:#f9a842;--coral:#f97b6a;
+  --purple:#a78bcd;--blue:#6ab4e8;
+  --bg:#f0faf8;--white:#ffffff;
+  --text-dark:#1e4f47;--text-mid:#3a7268;
+  --nav-w:130px;
+  --shadow:0 4px 24px rgba(0,0,0,0.09);
+  --r:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0;touch-action:manipulation;-webkit-tap-highlight-color:transparent;}
+body{font-family:'Nunito',sans-serif;background:var(--bg);color:var(--text-dark);display:flex;min-height:100vh;overflow:hidden;}
+body::before{content:'';position:fixed;inset:0;background:
+  radial-gradient(ellipse 60% 40% at 18% 12%,rgba(107,196,154,.22) 0%,transparent 70%),
+  radial-gradient(ellipse 50% 50% at 82% 18%,rgba(58,171,152,.16) 0%,transparent 70%),
+  radial-gradient(ellipse 40% 55% at 62% 82%,rgba(165,220,200,.2) 0%,transparent 70%),
+  radial-gradient(ellipse 70% 30% at 8% 68%,rgba(178,236,228,.25) 0%,transparent 70%),
+  linear-gradient(135deg,#e8f8f4 0%,#f5fef9 50%,#e0f5f0 100%);z-index:-1;}
+
+/* ── LEFT NAV ── */
+.left-nav{width:var(--nav-w);min-height:100vh;background:rgba(255,255,255,.88);backdrop-filter:blur(10px);
+  border-right:2px solid rgba(58,171,152,.18);display:flex;flex-direction:column;align-items:center;
+  padding:18px 8px 18px;gap:6px;position:fixed;left:0;top:0;bottom:0;z-index:200;
+  box-shadow:4px 0 20px rgba(0,0,0,.06);}
+.nav-logo{font-family:'Fredoka One',cursive;color:var(--teal);font-size:12px;text-align:center;
+  margin-bottom:10px;line-height:1.3;padding:0 4px;}
+.nav-logo span{display:block;font-size:30px;margin-bottom:2px;}
+.nav-btn{width:100%;padding:10px 6px;border:none;background:transparent;border-radius:14px;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;gap:3px;transition:all .2s;
+  color:var(--text-mid);font-family:'Nunito',sans-serif;font-size:11px;font-weight:700;text-align:center;line-height:1.2;}
+.nav-btn .ni{font-size:26px;line-height:1;}
+.nav-btn:hover,.nav-btn.active{background:var(--teal);color:#fff;transform:scale(1.04);}
+.nav-divider{width:80%;height:1px;background:rgba(58,171,152,.2);margin:3px 0;}
+
+/* ── MAIN ── */
+.main-content{margin-left:var(--nav-w);flex:1;height:100vh;overflow-y:auto;overflow-x:hidden;scroll-behavior:smooth;}
+.section{min-height:100vh;padding:38px 46px;display:flex;flex-direction:column;}
+
+/* section header */
+.sec-tag{display:inline-block;background:var(--teal);color:#fff;font-family:'Fredoka One',cursive;
+  font-size:13px;padding:4px 14px;border-radius:20px;margin-bottom:8px;letter-spacing:.4px;}
+.sec-title{font-family:'Fredoka One',cursive;font-size:clamp(26px,3.2vw,42px);color:var(--text-dark);line-height:1.1;margin-bottom:6px;}
+.sec-title .acc{color:var(--teal);}
+.sec-sub{font-size:16px;font-weight:600;color:var(--text-mid);margin-bottom:18px;}
+
+/* ══════════════════════════════
+   SECTION 0 – TITLE
+══════════════════════════════ */
+#s0{justify-content:center;align-items:center;text-align:center;gap:14px;}
+.t-emoji{font-size:clamp(50px,8vw,90px);animation:bob 3s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-12px);}}
+.t-main{font-family:'Fredoka One',cursive;font-size:clamp(34px,5vw,62px);color:var(--text-dark);}
+.t-sub{font-size:clamp(18px,2.4vw,28px);color:var(--teal);font-weight:800;}
+.meta-grid{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:8px 0;}
+.meta-chip{background:#fff;border:2px solid var(--teal-light);border-radius:50px;padding:10px 22px;
+  font-size:15px;font-weight:700;color:var(--teal-dark);box-shadow:var(--shadow);}
+.meta-chip em{font-style:normal;font-weight:400;color:var(--text-dark);}
+.go-btn{background:var(--teal);color:#fff;border:none;border-radius:50px;padding:18px 54px;
+  font-family:'Fredoka One',cursive;font-size:22px;cursor:pointer;
+  box-shadow:0 6px 24px rgba(58,171,152,.45);transition:all .2s;
+  animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(58,171,152,.45);}50%{box-shadow:0 6px 36px rgba(58,171,152,.75);}}
+.go-btn:hover{transform:translateY(-3px) scale(1.05);}
+.time-bar{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+.time-pill{background:rgba(58,171,152,.12);border:2px solid rgba(58,171,152,.3);border-radius:12px;
+  padding:8px 18px;font-size:14px;font-weight:700;color:var(--teal-dark);}
+
+/* ══════════════════════════════
+   SECTION 1 – STARTER
+══════════════════════════════ */
+.instr{background:rgba(58,171,152,.1);border-left:5px solid var(--teal);border-radius:12px;
+  padding:14px 20px;font-size:17px;font-weight:700;color:var(--teal-dark);margin-bottom:22px;}
+.habits-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+.habit-card{background:#fff;border-radius:var(--r);padding:28px 18px;text-align:center;
+  box-shadow:var(--shadow);border:3px solid transparent;cursor:pointer;transition:all .3s;
+  min-height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:10px;position:relative;overflow:hidden;}
+.habit-card .hi{font-size:58px;transition:transform .3s;}
+.habit-card .hl{font-family:'Fredoka One',cursive;font-size:19px;}
+.habit-card .hq{font-size:14px;color:var(--text-mid);font-weight:700;opacity:0;transition:all .35s;
+  position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);
+  padding:13px 12px;border-radius:0 0 17px 17px;line-height:1.45;}
+.habit-card:hover,.habit-card.on{transform:translateY(-5px);box-shadow:0 12px 32px rgba(0,0,0,.13);}
+.habit-card.on .hq{opacity:1;}
+.habit-card.on .hi{transform:scale(.75) translateY(-8px);}
+.habit-card[data-c="w"]{border-color:var(--blue);}
+.habit-card[data-c="s"]{border-color:var(--purple);}
+.habit-card[data-c="e"]{border-color:var(--coral);}
+.habit-card[data-c="f"]{border-color:var(--green);}
+.habit-card[data-c="w"].on{background:linear-gradient(135deg,#e3f4ff,#fff);}
+.habit-card[data-c="s"].on{background:linear-gradient(135deg,#f0e8ff,#fff);}
+.habit-card[data-c="e"].on{background:linear-gradient(135deg,#ffe8e5,#fff);}
+.habit-card[data-c="f"].on{background:linear-gradient(135deg,#e5f9ef,#fff);}
+.tap-hint{text-align:center;font-size:14px;font-weight:700;color:var(--text-mid);margin-top:14px;opacity:.7;}
+
+/* ══════════════════════════════
+   SECTION 2 – RAINBOW
+══════════════════════════════ */
+.rainbow-layout{display:grid;grid-template-columns:1fr 300px;gap:26px;flex:1;}
+.panel{background:#fff;border-radius:var(--r);padding:26px;box-shadow:var(--shadow);}
+.panel h3{font-family:'Fredoka One',cursive;font-size:20px;margin-bottom:14px;color:var(--text-dark);}
+.rainbow-bands{display:flex;flex-direction:column;gap:9px;}
+.rband{display:flex;align-items:center;gap:10px;border-radius:13px;padding:9px 12px;
+  min-height:58px;border:3px dashed rgba(0,0,0,.1);transition:all .2s;flex-wrap:wrap;cursor:pointer;}
+.rband.hover-target{border-style:solid;transform:scale(1.02);}
+.rband[data-bc="red"]{background:linear-gradient(90deg,#ffcdd2,#fff5f5);border-color:#e57373;}
+.rband[data-bc="orange"]{background:linear-gradient(90deg,#ffe0b2,#fff8f0);border-color:#ff9800;}
+.rband[data-bc="yellow"]{background:linear-gradient(90deg,#fff9c4,#fffef0);border-color:#fbc02d;}
+.rband[data-bc="green"]{background:linear-gradient(90deg,#c8e6c9,#f5fff5);border-color:#4caf50;}
+.rband[data-bc="blue"]{background:linear-gradient(90deg,#bbdefb,#f0f8ff);border-color:#2196f3;}
+.rband[data-bc="purple"]{background:linear-gradient(90deg,#e1bee7,#faf0ff);border-color:#9c27b0;}
+.bl{font-family:'Fredoka One',cursive;font-size:15px;min-width:72px;color:#fff;
+  border-radius:8px;padding:3px 8px;text-align:center;flex-shrink:0;}
+.rband[data-bc="red"] .bl{background:#e57373;}
+.rband[data-bc="orange"] .bl{background:#ff9800;}
+.rband[data-bc="yellow"] .bl{background:#fbc02d;}
+.rband[data-bc="green"] .bl{background:#4caf50;}
+.rband[data-bc="blue"] .bl{background:#2196f3;}
+.rband[data-bc="purple"] .bl{background:#9c27b0;}
+.bem{font-size:18px;min-width:24px;}
+.bdrop{display:flex;flex-wrap:wrap;gap:5px;flex:1;min-height:32px;align-items:center;}
+.dfruit{background:rgba(255,255,255,.8);border-radius:20px;padding:3px 11px;
+  font-size:13px;font-weight:800;color:#333;display:flex;align-items:center;gap:4px;
+  cursor:pointer;border:1px solid rgba(0,0,0,.1);transition:opacity .2s;}
+.dfruit:hover{opacity:.65;}
+
+/* fruit chips */
+.fruit-chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.fchip{background:var(--green-light);border:2px solid var(--green);border-radius:50px;
+  padding:8px 15px;font-size:15px;font-weight:700;color:var(--text-dark);cursor:pointer;
+  transition:all .2s;user-select:none;}
+.fchip:hover{background:var(--green);color:#fff;}
+.fchip.sel{background:var(--teal);color:#fff;border-color:var(--teal-dark);transform:scale(1.08);}
+.fchip.used{opacity:.3;pointer-events:none;}
+.vfact{background:linear-gradient(135deg,#e8f5e9,#f5fff8);border:2px solid var(--green);
+  border-radius:14px;padding:14px;font-size:13.5px;font-weight:600;color:var(--text-dark);line-height:1.5;}
+.vfact h4{font-family:'Fredoka One',cursive;color:#388e3c;font-size:17px;margin-bottom:7px;}
+.rbtn{margin-top:14px;background:var(--teal);color:#fff;border:none;border-radius:50px;
+  padding:13px 28px;font-family:'Fredoka One',cursive;font-size:17px;cursor:pointer;
+  transition:all .2s;width:100%;}
+.rbtn:hover{background:var(--teal-dark);transform:scale(1.03);}
+
+/* ══════════════════════════════
+   SECTION 3 – FRUIT MARKET
+══════════════════════════════ */
+.market-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1;}
+.dlg-box{background:#fff;border-radius:var(--r);padding:26px;box-shadow:var(--shadow);overflow-y:auto;}
+.dlg-box h3{font-family:'Fredoka One',cursive;font-size:21px;margin-bottom:18px;color:var(--text-dark);}
+.dline{display:flex;align-items:baseline;gap:9px;margin-bottom:13px;font-size:16px;line-height:1.65;}
+.spk{font-family:'Fredoka One',cursive;font-size:12px;padding:3px 10px;border-radius:20px;
+  white-space:nowrap;min-width:76px;text-align:center;flex-shrink:0;}
+.spk.br{background:#bbdefb;color:#1565c0;}
+.spk.sl{background:#c8e6c9;color:#2e7d32;}
+.spk.si{background:#f8bbd9;color:#880e4f;}
+.blank{display:inline-block;background:#f5f5f5;border:2px dashed var(--teal);border-radius:8px;
+  min-width:82px;padding:2px 10px;font-size:15px;font-weight:800;text-align:center;
+  cursor:pointer;transition:all .2s;color:var(--teal-dark);vertical-align:middle;line-height:1.9;}
+.blank:hover{border-color:var(--teal-dark);background:var(--teal-light);}
+.blank.act{border-color:var(--orange);background:#fff8e0;box-shadow:0 0 0 3px rgba(249,168,66,.3);}
+.blank.done{background:var(--teal-light);border-style:solid;}
+.blank.ok{background:#e8f5e9;border-color:#4caf50;color:#2e7d32;}
+.blank.bad{background:#ffebee;border-color:#f44336;color:#c62828;}
+
+/* right panel */
+.right-col{display:flex;flex-direction:column;gap:18px;}
+.wb-box{background:#fff;border-radius:var(--r);padding:22px;box-shadow:var(--shadow);}
+.wb-box h3{font-family:'Fredoka One',cursive;font-size:19px;margin-bottom:6px;color:var(--text-dark);}
+.wb-box p{font-size:13px;font-weight:600;color:var(--text-mid);margin-bottom:12px;}
+.wb{display:flex;flex-wrap:wrap;gap:9px;}
+.wchip{background:var(--yellow);border:2px solid #ddb800;border-radius:50px;
+  padding:10px 20px;font-size:17px;font-weight:800;cursor:pointer;
+  transition:all .2s;color:var(--text-dark);user-select:none;}
+.wchip:hover{background:var(--orange);border-color:#c07800;}
+.wchip.sel{background:var(--teal);color:#fff;border-color:var(--teal-dark);transform:scale(1.1);}
+.wchip.used{opacity:.28;pointer-events:none;}
+
+/* detective */
+.det-box{background:linear-gradient(135deg,#1a3a5c,#0d2438);border-radius:var(--r);
+  padding:22px;color:#fff;box-shadow:var(--shadow);}
+.det-box h3{font-family:'Fredoka One',cursive;font-size:20px;margin-bottom:14px;}
+.det-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.dcard{border-radius:14px;padding:14px;text-align:center;}
+.dcard.near{background:rgba(58,171,152,.3);border:2px solid var(--teal);}
+.dcard.far{background:rgba(249,168,66,.22);border:2px solid var(--orange);}
+.dcard .dt{font-family:'Fredoka One',cursive;font-size:13px;opacity:.75;margin-bottom:6px;}
+.dcard .dw{font-family:'Fredoka One',cursive;font-size:28px;line-height:1.2;}
+.dcard .de{font-size:12px;opacity:.65;margin-top:5px;font-style:italic;}
+.dcard .dic{font-size:20px;margin-bottom:5px;}
+.gram-note{background:rgba(255,255,255,.1);border-radius:10px;padding:11px 14px;
+  margin-top:13px;font-size:13px;line-height:1.65;opacity:.92;}
+.gram-note strong{color:var(--yellow);}
+
+/* buttons */
+.btn-row{display:flex;gap:11px;margin-top:4px;}
+.chk-btn{background:#4caf50;color:#fff;border:none;border-radius:50px;padding:13px 22px;
+  font-family:'Fredoka One',cursive;font-size:17px;cursor:pointer;transition:all .2s;flex:1;}
+.chk-btn:hover{background:#388e3c;transform:scale(1.03);}
+.rst-btn{background:#ef5350;color:#fff;border:none;border-radius:50px;padding:13px 22px;
+  font-family:'Fredoka One',cursive;font-size:17px;cursor:pointer;transition:all .2s;}
+.rst-btn:hover{background:#c62828;transform:scale(1.03);}
+.score-disp{font-family:'Fredoka One',cursive;font-size:20px;text-align:center;padding:11px;
+  border-radius:13px;margin-top:10px;display:none;}
+.score-disp.show{display:block;}
+.score-disp.good{background:#e8f5e9;color:#2e7d32;}
+.score-disp.ok{background:#fff8e1;color:#e65100;}
+.score-disp.poor{background:#ffebee;color:#c62828;}
+
+/* ══════════════════════════════
+   SECTION 4 – ROLEPLAY
+══════════════════════════════ */
+.rp-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;flex:1;}
+.rp-gen{background:#fff;border-radius:var(--r);padding:28px;box-shadow:var(--shadow);text-align:center;}
+.rp-gen h3{font-family:'Fredoka One',cursive;font-size:22px;margin-bottom:18px;color:var(--text-dark);}
+.spin-btn{background:linear-gradient(135deg,var(--teal),var(--green));color:#fff;border:none;
+  border-radius:50px;padding:18px 36px;font-family:'Fredoka One',cursive;font-size:21px;
+  cursor:pointer;transition:all .3s;box-shadow:0 6px 22px rgba(58,171,152,.4);
+  margin-bottom:22px;width:100%;}
+.spin-btn:hover{transform:scale(1.05) rotate(-1deg);}
+.spin-btn:active{transform:scale(.97);}
+.role-cards{display:flex;flex-direction:column;gap:13px;text-align:left;}
+.rcard{border-radius:16px;padding:15px 18px;display:flex;align-items:center;gap:14px;transition:all .35s;}
+.rcard.seller{background:linear-gradient(90deg,#e8f5e9,#f5fffb);border:2px solid #4caf50;}
+.rcard.buyer1{background:linear-gradient(90deg,#e3f2fd,#f5fafe);border:2px solid #2196f3;}
+.rcard.buyer2{background:linear-gradient(90deg,#fce4ec,#fff5f8);border:2px solid #e91e63;}
+.rcard .ri{font-size:38px;}
+.rcard .rname{font-family:'Fredoka One',cursive;font-size:17px;color:var(--text-dark);}
+.rcard .rfruit{font-size:14px;font-weight:700;color:var(--teal-dark);margin-top:3px;}
+.rcard .rline{font-size:13px;color:var(--text-mid);font-style:italic;margin-top:3px;line-height:1.4;}
+.rcard.spinning{animation:spin-card .6s ease-in-out;}
+@keyframes spin-card{0%{transform:scale(.95) rotateY(20deg);opacity:.5;}100%{transform:scale(1) rotateY(0);opacity:1;}}
+
+/* tips panel */
+.tips-box{background:linear-gradient(135deg,#fff9e6,#fffef5);border:2px solid var(--yellow);
+  border-radius:var(--r);padding:26px;box-shadow:var(--shadow);}
+.tips-box h3{font-family:'Fredoka One',cursive;font-size:21px;margin-bottom:14px;
+  color:var(--text-dark);display:flex;gap:10px;align-items:center;}
+.tip{display:flex;gap:11px;margin-bottom:13px;align-items:flex-start;}
+.tip .ticon{font-size:22px;flex-shrink:0;margin-top:2px;}
+.tip .ttxt{font-size:15px;line-height:1.5;font-weight:600;color:var(--text-dark);}
+.tip .ttxt .hl{background:var(--yellow);padding:1px 6px;border-radius:6px;font-weight:800;}
+.phrase-bank{margin-top:18px;background:#fff;border-radius:14px;padding:15px;}
+.phrase-bank h4{font-family:'Fredoka One',cursive;font-size:16px;color:var(--teal-dark);margin-bottom:9px;}
+.ph{font-size:14px;padding:6px 0;border-bottom:1px dashed #eee;display:flex;gap:8px;}
+.ph:last-child{border-bottom:none;}
+.ph .phs{font-weight:800;color:var(--teal);min-width:64px;}
+
+/* ── POPUP ── */
+.popup-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:900;
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
+.popup-overlay.show{opacity:1;pointer-events:all;}
+.popup{background:#fff;border-radius:24px;padding:36px 40px;max-width:520px;width:90%;
+  text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.2);transform:scale(.9);transition:transform .25s;}
+.popup-overlay.show .popup{transform:scale(1);}
+.popup h2{font-family:'Fredoka One',cursive;font-size:28px;color:var(--text-dark);margin-bottom:10px;}
+.popup p{font-size:16px;color:var(--text-mid);font-weight:600;line-height:1.55;margin-bottom:20px;}
+.popup-close{background:var(--teal);color:#fff;border:none;border-radius:50px;padding:13px 36px;
+  font-family:'Fredoka One',cursive;font-size:18px;cursor:pointer;transition:all .2s;}
+.popup-close:hover{background:var(--teal-dark);}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:30px;right:30px;background:var(--text-dark);color:#fff;
+  border-radius:14px;padding:14px 24px;font-size:16px;font-weight:700;z-index:999;
+  transform:translateY(80px);opacity:0;transition:all .3s;pointer-events:none;}
+.toast.show{transform:translateY(0);opacity:1;}
+
+/* Scrollbar */
+.main-content::-webkit-scrollbar{width:6px;}
+.main-content::-webkit-scrollbar-track{background:transparent;}
+.main-content::-webkit-scrollbar-thumb{background:rgba(58,171,152,.4);border-radius:3px;}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════ LEFT NAV ═══════════════════════ -->
+<nav class="left-nav">
+  <div class="nav-logo"><span>🍎</span>Unit 8.2</div>
+  <div class="nav-divider"></div>
+  <button class="nav-btn active" onclick="goTo('s0',this)">
+    <span class="ni">🏠</span>Home
+  </button>
+  <button class="nav-btn" onclick="goTo('s1',this)">
+    <span class="ni">💪</span>Starter
+  </button>
+  <button class="nav-btn" onclick="goTo('s2',this)">
+    <span class="ni">🌈</span>Rainbow
+  </button>
+  <button class="nav-btn" onclick="goTo('s3',this)">
+    <span class="ni">🛒</span>Market
+  </button>
+  <button class="nav-btn" onclick="goTo('s4',this)">
+    <span class="ni">🎭</span>Roleplay
+  </button>
+  <div class="nav-divider"></div>
+  <button class="nav-btn" onclick="showVitaminFact()">
+    <span class="ni">💡</span>Vitamin Facts
+  </button>
+</nav>
+
+<!-- ═══════════════════════ MAIN CONTENT ═══════════════════════ -->
+<main class="main-content" id="mainContent">
+
+<!-- ╔══════════════════════════════╗
+     ║  SECTION 0 – TITLE SLIDE    ║
+     ╚══════════════════════════════╝ -->
+<section class="section" id="s0">
+  <div class="t-emoji">🍎 🍊 🍋 🥝 🍇</div>
+  <div class="t-main">Staying Healthy</div>
+  <div class="t-sub">Unit 8.2 — Cambridge Global English</div>
+  <div class="meta-grid">
+    <div class="meta-chip">📚 Curriculum: <em>Cambridge Global English</em></div>
+    <div class="meta-chip">🏫 Level: <em>Grade 3 ESL</em></div>
+    <div class="meta-chip">📖 Unit: <em>8.2 – My Amazing Body</em></div>
+    <div class="meta-chip">📄 Page: <em>130</em></div>
+  </div>
+  <div class="time-bar">
+    <div class="time-pill">⏱ Total: 40 minutes</div>
+    <div class="time-pill">💪 Starter: 5–10 min</div>
+    <div class="time-pill">🌈 Rainbow: 10–15 min</div>
+    <div class="time-pill">🛒 Market: 10–15 min</div>
+    <div class="time-pill">🎭 Roleplay: 5 min</div>
+  </div>
+  <button class="go-btn" onclick="goTo('s1',null)">Let's Begin! 🚀</button>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  SECTION 1 – STARTER        ║
+     ╚══════════════════════════════╝ -->
+<section class="section" id="s1">
+  <div class="sec-tag">⏱ Starter · 5–10 min</div>
+  <div class="sec-title">Healthy <span class="acc">Habits</span></div>
+  <div class="sec-sub">Think-Pair-Share — Tap each card to reveal a question. Talk with your partner!</div>
+  <div class="instr">👆 Tap any card below to reveal the discussion question, then share your answer with a partner.</div>
+  <div class="habits-grid">
+    <div class="habit-card" data-c="w" onclick="tapHabit(this)">
+      <div class="hi">💧</div>
+      <div class="hl">Water</div>
+      <div class="hq">How many glasses of water do you drink every day? Why is water important for your body?</div>
+    </div>
+    <div class="habit-card" data-c="s" onclick="tapHabit(this)">
+      <div class="hi">😴</div>
+      <div class="hl">Sleep</div>
+      <div class="hq">How many hours do you sleep at night? What happens to your body when you don't sleep enough?</div>
+    </div>
+    <div class="habit-card" data-c="e" onclick="tapHabit(this)">
+      <div class="hi">🏃</div>
+      <div class="hl">Exercise</div>
+      <div class="hq">What sport or activity do you enjoy? How does exercise make you feel after you finish?</div>
+    </div>
+    <div class="habit-card" data-c="f" onclick="tapHabit(this)">
+      <div class="hi">🥗</div>
+      <div class="hl">Healthy Food</div>
+      <div class="hq">Name your favourite healthy food. Do you eat fruit every day? Which fruit is your favourite?</div>
+    </div>
+  </div>
+  <div class="tap-hint">✨ Tap again to close a card</div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  SECTION 2 – RAINBOW        ║
+     ╚══════════════════════════════╝ -->
+<section class="section" id="s2">
+  <div class="sec-tag">🌈 The Vitamin Rainbow · 10–15 min</div>
+  <div class="sec-title">Fruit <span class="acc">Colours</span> of the Rainbow</div>
+  <div class="sec-sub">Tap a fruit, then tap its matching rainbow colour!</div>
+  <div class="rainbow-layout">
+    <!-- Left: rainbow bands -->
+    <div class="panel">
+      <h3>🌈 Sort the Fruits — Tap a fruit, then tap a colour band</h3>
+      <div class="rainbow-bands" id="rainbowBands">
+        <div class="rband" data-bc="red" onclick="dropFruit(this)">
+          <div class="bl">Red</div><div class="bem">🔴</div>
+          <div class="bdrop" id="drop-red"></div>
+        </div>
+        <div class="rband" data-bc="orange" onclick="dropFruit(this)">
+          <div class="bl">Orange</div><div class="bem">🟠</div>
+          <div class="bdrop" id="drop-orange"></div>
+        </div>
+        <div class="rband" data-bc="yellow" onclick="dropFruit(this)">
+          <div class="bl">Yellow</div><div class="bem">🟡</div>
+          <div class="bdrop" id="drop-yellow"></div>
+        </div>
+        <div class="rband" data-bc="green" onclick="dropFruit(this)">
+          <div class="bl">Green</div><div class="bem">🟢</div>
+          <div class="bdrop" id="drop-green"></div>
+        </div>
+        <div class="rband" data-bc="blue" onclick="dropFruit(this)">
+          <div class="bl">Blue / Indigo</div><div class="bem">🔵</div>
+          <div class="bdrop" id="drop-blue"></div>
+        </div>
+        <div class="rband" data-bc="purple" onclick="dropFruit(this)">
+          <div class="bl">Purple</div><div class="bem">🟣</div>
+          <div class="bdrop" id="drop-purple"></div>
+        </div>
+      </div>
+    </div>
+    <!-- Right: fruit chips + facts -->
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="panel">
+        <h3>🍓 Fruit Bank</h3>
+        <p style="font-size:13px;font-weight:700;color:var(--text-mid);margin-bottom:12px;">Select a fruit → tap its colour band</p>
+        <div class="fruit-chips" id="fruitChips">
+          <div class="fchip" data-fruit="🍓 Strawberry" data-color="red" onclick="selectFruit(this)">🍓 Strawberry</div>
+          <div class="fchip" data-fruit="🍎 Apple" data-color="red" onclick="selectFruit(this)">🍎 Apple</div>
+          <div class="fchip" data-fruit="🍊 Orange" data-color="orange" onclick="selectFruit(this)">🍊 Orange</div>
+          <div class="fchip" data-fruit="🟠 Kumquat" data-color="orange" onclick="selectFruit(this)">🟠 Kumquat</div>
+          <div class="fchip" data-fruit="🍋 Lemon" data-color="yellow" onclick="selectFruit(this)">🍋 Lemon</div>
+          <div class="fchip" data-fruit="🍌 Banana" data-color="yellow" onclick="selectFruit(this)">🍌 Banana</div>
+          <div class="fchip" data-fruit="🍐 Pear" data-color="green" onclick="selectFruit(this)">🍐 Pear</div>
+          <div class="fchip" data-fruit="🥭 Mango" data-color="yellow" onclick="selectFruit(this)">🥭 Mango</div>
+          <div class="fchip" data-fruit="🥝 Kiwi" data-color="green" onclick="selectFruit(this)">🥝 Kiwi</div>
+          <div class="fchip" data-fruit="🍈 Honeydew" data-color="green" onclick="selectFruit(this)">🍈 Honeydew</div>
+          <div class="fchip" data-fruit="🫐 Blueberry" data-color="blue" onclick="selectFruit(this)">🫐 Blueberry</div>
+          <div class="fchip" data-fruit="🍇 Grapes" data-color="purple" onclick="selectFruit(this)">🍇 Grapes</div>
+          <div class="fchip" data-fruit="🟣 Plum" data-color="purple" onclick="selectFruit(this)">🟣 Plum</div>
+        </div>
+        <button class="rbtn" onclick="checkRainbow()">✅ Check My Answers</button>
+        <div id="rainbowScore" class="score-disp"></div>
+      </div>
+      <div class="vfact">
+        <h4>🌟 Vitamin Fact!</h4>
+        The <strong>vitamins</strong> in fruit keep our skin and eyes strong and clear.<br>
+        They also help our cuts <strong>heal quickly</strong>!<br><br>
+        🔴 <strong>Red fruits</strong> → good for your heart<br>
+        🟡 <strong>Yellow fruits</strong> → great for your skin<br>
+        🟢 <strong>Green fruits</strong> → boost your energy<br>
+        🔵 <strong>Purple fruits</strong> → protect your brain
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔════════════════════════════════╗
+     ║  SECTION 3 – FRUIT MARKET    ║
+     ╚════════════════════════════════╝ -->
+<section class="section" id="s3">
+  <div class="sec-tag">🛒 Fruit Market · 10–15 min</div>
+  <div class="sec-title">At the <span class="acc">Fruit Market</span></div>
+  <div class="sec-sub">Listen, fill in the gaps, and learn the grammar rule!</div>
+  <div class="market-grid">
+    <!-- Dialogue -->
+    <div class="dlg-box">
+      <h3>🎙️ The Conversation — Page 130</h3>
+      <div class="instr" style="font-size:14px;padding:10px 16px;margin-bottom:16px;">
+        👆 Tap a word from the Word Bank (right), then tap a blank to fill it.
+      </div>
+
+      <div class="dline">
+        <span class="spk br">Brother</span>
+        <span>Excuse <span class="blank" id="b1" data-ans="me" onclick="fillBlank(this)">___</span>. What is this?</span>
+      </div>
+      <div class="dline">
+        <span class="spk sl">Seller</span>
+        <span><span class="blank" id="b2" data-ans="This" onclick="fillBlank(this)">___</span> is a kiwi. It's green inside and very good.</span>
+      </div>
+      <div class="dline">
+        <span class="spk br">Brother</span>
+        <span>And what are <span class="blank" id="b3" data-ans="these" onclick="fillBlank(this)">___</span>?</span>
+      </div>
+      <div class="dline">
+        <span class="spk sl">Seller</span>
+        <span>These are <span class="blank" id="b4" data-ans="kumquats" onclick="fillBlank(this)">___</span>. They're like little oranges.</span>
+      </div>
+      <div class="dline">
+        <span class="spk si">Sister</span>
+        <span>What's <span class="blank" id="b5" data-ans="that" onclick="fillBlank(this)">___</span>?</span>
+      </div>
+      <div class="dline">
+        <span class="spk sl">Seller</span>
+        <span>That is a fresh juice drink and <span class="blank" id="b6" data-ans="those" onclick="fillBlank(this)">___</span> are fruit kebabs.</span>
+      </div>
+      <div class="dline">
+        <span class="spk si">Sister</span>
+        <span>I want one of those, <span class="blank" id="b7" data-ans="please" onclick="fillBlank(this)">___</span>.</span>
+      </div>
+      <div class="dline">
+        <span class="spk br">Brother</span>
+        <span>And I want a box of <span class="blank" id="b8" data-ans="these" onclick="fillBlank(this)">___</span>.</span>
+      </div>
+      <div class="dline">
+        <span class="spk sl">Seller</span>
+        <span>Here you are – one fruit kebab and a box of kumquats.</span>
+      </div>
+
+      <div class="btn-row">
+        <button class="chk-btn" onclick="checkDialogue()">✅ Check Answers</button>
+        <button class="rst-btn" onclick="resetDialogue()">🔄 Reset</button>
+      </div>
+      <div id="dlgScore" class="score-disp"></div>
+    </div>
+
+    <!-- Right column -->
+    <div class="right-col">
+      <!-- Word Bank -->
+      <div class="wb-box">
+        <h3>📦 Word Bank</h3>
+        <p>Tap a word to select it, then tap a blank in the dialogue.</p>
+        <div class="wb" id="wordBank">
+          <div class="wchip" data-word="me" onclick="selectWord(this)">me</div>
+          <div class="wchip" data-word="This" onclick="selectWord(this)">This</div>
+          <div class="wchip" data-word="these" onclick="selectWord(this)">these</div>
+          <div class="wchip" data-word="kumquats" onclick="selectWord(this)">kumquats</div>
+          <div class="wchip" data-word="that" onclick="selectWord(this)">that</div>
+          <div class="wchip" data-word="those" onclick="selectWord(this)">those</div>
+          <div class="wchip" data-word="please" onclick="selectWord(this)">please</div>
+          <div class="wchip" data-word="these" onclick="selectWord(this)">these ②</div>
+        </div>
+      </div>
+
+      <!-- Language Detective -->
+      <div class="det-box">
+        <h3>🔍 Language Detective</h3>
+        <div class="det-grid">
+          <div class="dcard near">
+            <div class="dic">👋 NEAR</div>
+            <div class="dt">Things close to you</div>
+            <div class="dw">this<br>these</div>
+            <div class="de">Singular → this<br>Plural → these</div>
+          </div>
+          <div class="dcard far">
+            <div class="dic">👉 FAR</div>
+            <div class="dt">Things far from you</div>
+            <div class="dw">that<br>those</div>
+            <div class="de">Singular → that<br>Plural → those</div>
+          </div>
+        </div>
+        <div class="gram-note">
+          <strong>Near + Singular:</strong> "What is <strong style="color:var(--teal-light)">this</strong>?" (one kiwi, near)<br>
+          <strong>Near + Plural:</strong> "What are <strong style="color:var(--teal-light)">these</strong>?" (many kumquats, near)<br>
+          <strong>Far + Singular:</strong> "What is <strong style="color:var(--yellow)">that</strong>?" (one drink, far)<br>
+          <strong>Far + Plural:</strong> "I want one of <strong style="color:var(--yellow)">those</strong>." (kebabs, far)
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗
+     ║  SECTION 4 – ROLEPLAY       ║
+     ╚══════════════════════════════╝ -->
+<section class="section" id="s4">
+  <div class="sec-tag">🎭 Roleplay & Wrap-up · 5 min</div>
+  <div class="sec-title">At the Market <span class="acc">Roleplay</span></div>
+  <div class="sec-sub">Take a role and act out your own fruit market scene!</div>
+  <div class="rp-grid">
+    <!-- Generator -->
+    <div class="rp-gen">
+      <h3>🎰 Role Generator</h3>
+      <button class="spin-btn" onclick="generateRoles()">🎲 Assign Roles!</button>
+      <div class="role-cards" id="roleCards">
+        <div class="rcard seller" id="rc-seller">
+          <div class="ri">🧑‍🍳</div>
+          <div>
+            <div class="rname">Fruit Seller</div>
+            <div class="rfruit" id="rf-seller">Tap the button to start!</div>
+            <div class="rline" id="rl-seller">You run the fruit stall.</div>
+          </div>
+        </div>
+        <div class="rcard buyer1" id="rc-buyer1">
+          <div class="ri">👦</div>
+          <div>
+            <div class="rname">Buyer 1 — Brother</div>
+            <div class="rfruit" id="rf-buyer1">Tap the button to start!</div>
+            <div class="rline" id="rl-buyer1">Ask about a fruit near you.</div>
+          </div>
+        </div>
+        <div class="rcard buyer2" id="rc-buyer2">
+          <div class="ri">👧</div>
+          <div>
+            <div class="rname">Buyer 2 — Sister</div>
+            <div class="rfruit" id="rf-buyer2">Tap the button to start!</div>
+            <div class="rline" id="rl-buyer2">Ask about a fruit far away.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tips -->
+    <div class="tips-box">
+      <h3>💬 Useful Phrases</h3>
+      <div class="tip">
+        <div class="ticon">👆</div>
+        <div class="ttxt">Point to something <em>close</em> → use <span class="hl">this / these</span></div>
+      </div>
+      <div class="tip">
+        <div class="ticon">👉</div>
+        <div class="ttxt">Point to something <em>far away</em> → use <span class="hl">that / those</span></div>
+      </div>
+      <div class="tip">
+        <div class="ticon">🛒</div>
+        <div class="ttxt">Use your assigned fruit and act it out with gestures!</div>
+      </div>
+      <div class="tip">
+        <div class="ticon">🌟</div>
+        <div class="ttxt">Try to use all four words: <span class="hl">this, these, that, those</span></div>
+      </div>
+      <div class="phrase-bank">
+        <h4>🗣️ Sentence Starters</h4>
+        <div class="ph"><span class="phs">Buyer:</span> "Excuse me. What is <strong>this</strong>?"</div>
+        <div class="ph"><span class="phs">Buyer:</span> "And what are <strong>these</strong>?"</div>
+        <div class="ph"><span class="phs">Buyer:</span> "What's <strong>that</strong>?"</div>
+        <div class="ph"><span class="phs">Buyer:</span> "I want one of <strong>those</strong>, please."</div>
+        <div class="ph"><span class="phs">Seller:</span> "<strong>This</strong> is a ___. It's very good!"</div>
+        <div class="ph"><span class="phs">Seller:</span> "<strong>These</strong> are ___. They are ___."</div>
+        <div class="ph"><span class="phs">Seller:</span> "Here you are!"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main><!-- end main-content -->
+
+<!-- ═══════════════════════ POPUP ═══════════════════════ -->
+<div class="popup-overlay" id="popupOverlay" onclick="closePopup(event)">
+  <div class="popup">
+    <h2 id="popupTitle">🌟 Vitamin Fact!</h2>
+    <p id="popupBody">Loading...</p>
+    <button class="popup-close" onclick="closePopupBtn()">Got it! ✓</button>
+  </div>
+</div>
+
+<!-- ═══════════════════════ TOAST ═══════════════════════ -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ─── NAVIGATION ───────────────────────────────────────────
+function goTo(id, btn) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else {
+    const map={'s0':0,'s1':1,'s2':2,'s3':3,'s4':4};
+    const btns=document.querySelectorAll('.nav-btn');
+    if(btns[map[id]]) btns[map[id]].classList.add('active');
+  }
+}
+
+// Update active nav on scroll
+const mainContent=document.getElementById('mainContent');
+const sections=['s0','s1','s2','s3','s4'];
+mainContent.addEventListener('scroll',()=>{
+  let current=sections[0];
+  sections.forEach(id=>{
+    const el=document.getElementById(id);
+    if(el && el.getBoundingClientRect().top <= mainContent.getBoundingClientRect().top+60) current=id;
+  });
+  const map={s0:0,s1:1,s2:2,s3:3,s4:4};
+  document.querySelectorAll('.nav-btn').forEach((b,i)=>{
+    b.classList.toggle('active', i===map[current]);
+  });
+});
+
+// ─── TOAST ────────────────────────────────────────────────
+function showToast(msg, dur=2200) {
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),dur);
+}
+
+// ─── SECTION 1: HABITS ────────────────────────────────────
+function tapHabit(card) {
+  card.classList.toggle('on');
+}
+
+// ─── SECTION 2: RAINBOW ───────────────────────────────────
+let selFruit=null;
+
+function selectFruit(el) {
+  if(el.classList.contains('used')) return;
+  document.querySelectorAll('.fchip').forEach(c=>c.classList.remove('sel'));
+  if(selFruit===el){selFruit=null;return;}
+  el.classList.add('sel');
+  selFruit=el;
+  showToast(`Selected: ${el.dataset.fruit} — now tap a colour band!`);
+}
+
+function dropFruit(band) {
+  if(!selFruit){showToast('👆 First tap a fruit from the Fruit Bank!');return;}
+  const dropZone=band.querySelector('.bdrop');
+  const fruitName=selFruit.dataset.fruit;
+  // Create dropped chip
+  const chip=document.createElement('div');
+  chip.className='dfruit';
+  chip.textContent=fruitName;
+  chip.dataset.fruit=fruitName;
+  chip.dataset.chip=selFruit.id||fruitName;
+  chip.title='Tap to remove';
+  chip.onclick=function(){
+    // return to bank
+    const orig=document.querySelector(`.fchip[data-fruit="${fruitName}"]`);
+    if(orig){orig.classList.remove('used');orig.style.opacity='';}
+    chip.remove();
+  };
+  dropZone.appendChild(chip);
+  selFruit.classList.add('used');
+  selFruit.classList.remove('sel');
+  selFruit=null;
+}
+
+const correctColors={
+  '🍓 Strawberry':'red','🍎 Apple':'red',
+  '🍊 Orange':'orange','🟠 Kumquat':'orange',
+  '🍋 Lemon':'yellow','🍌 Banana':'yellow','🥭 Mango':'yellow',
+  '🍐 Pear':'green',
+  '🥝 Kiwi':'green','🍈 Honeydew':'green',
+  '🫐 Blueberry':'blue',
+  '🍇 Grapes':'purple','🟣 Plum':'purple'
+};
+
+function checkRainbow() {
+  const bands=document.querySelectorAll('.rband');
+  let correct=0,total=0;
+  bands.forEach(band=>{
+    const bc=band.dataset.bc;
+    band.querySelectorAll('.dfruit').forEach(df=>{
+      total++;
+      const name=df.dataset.fruit;
+      if(correctColors[name]===bc){
+        correct++;
+        df.style.background='rgba(200,255,220,0.9)';
+        df.style.border='2px solid #4caf50';
+        df.style.color='#2e7d32';
+      } else {
+        df.style.background='rgba(255,200,200,0.9)';
+        df.style.border='2px solid #f44336';
+        df.style.color='#c62828';
+      }
+    });
+  });
+  const sc=document.getElementById('rainbowScore');
+  sc.classList.add('show');
+  if(total===0){sc.textContent='⚠️ Sort some fruits first!';sc.className='score-disp show ok';return;}
+  if(correct===total){sc.textContent=`🌈 Perfect! ${correct}/${total} correct! Amazing work!`;sc.className='score-disp show good';}
+  else if(correct>=total*0.6){sc.textContent=`👍 ${correct}/${total} correct! Check the red ones!`;sc.className='score-disp show ok';}
+  else{sc.textContent=`💪 ${correct}/${total} — Keep trying! Think about the fruit colours.`;sc.className='score-disp show poor';}
+}
+
+// ─── SECTION 3: DIALOGUE ──────────────────────────────────
+let selWord=null;
+let wordUsed={};
+
+function selectWord(el) {
+  if(el.classList.contains('used')) return;
+  document.querySelectorAll('.wchip').forEach(w=>w.classList.remove('sel'));
+  if(selWord===el){selWord=null;return;}
+  el.classList.add('sel');
+  selWord=el;
+  showToast(`Selected: "${el.dataset.word}" — now tap a blank!`);
+}
+
+function fillBlank(blank) {
+  if(!selWord){showToast('👆 First tap a word from the Word Bank!');return;}
+  // If blank already filled, return old word
+  if(blank.classList.contains('done')) {
+    const old=blank.textContent;
+    // find chip with that word and un-use
+    document.querySelectorAll('.wchip').forEach(w=>{
+      if(w.dataset.word===old && w.classList.contains('used')) {w.classList.remove('used');return;}
+    });
+  }
+  blank.textContent=selWord.dataset.word;
+  blank.classList.add('done');
+  blank.classList.remove('act','ok','bad');
+  selWord.classList.add('used');
+  selWord.classList.remove('sel');
+  selWord=null;
+}
+
+function checkDialogue() {
+  const blanks=document.querySelectorAll('.blank');
+  let correct=0,filled=0;
+  blanks.forEach(b=>{
+    const val=b.textContent.trim();
+    if(val&&val!=='___'){
+      filled++;
+      const ans=b.dataset.ans;
+      if(val.toLowerCase()===ans.toLowerCase()||(ans==='these'&&val==='these')){
+        b.classList.add('ok');b.classList.remove('bad');correct++;
+      } else {
+        b.classList.add('bad');b.classList.remove('ok');
+      }
+    }
+  });
+  const sc=document.getElementById('dlgScore');
+  sc.classList.add('show');
+  if(filled<blanks.length){sc.textContent=`⚠️ Please fill all ${blanks.length} blanks first! (${filled}/${blanks.length} done)`;sc.className='score-disp show ok';return;}
+  if(correct===blanks.length){sc.textContent='🌟 Perfect score! Excellent English!';sc.className='score-disp show good';}
+  else if(correct>=blanks.length*0.6){sc.textContent=`👍 ${correct}/${blanks.length} correct! Almost there!`;sc.className='score-disp show ok';}
+  else{sc.textContent=`💪 ${correct}/${blanks.length} — Keep trying! Review the Language Detective!`;sc.className='score-disp show poor';}
+}
+
+function resetDialogue() {
+  document.querySelectorAll('.blank').forEach(b=>{
+    b.textContent='___';
+    b.className='blank';
+  });
+  document.querySelectorAll('.wchip').forEach(w=>{
+    w.classList.remove('used','sel');
+  });
+  const sc=document.getElementById('dlgScore');
+  sc.className='score-disp';
+  selWord=null;
+  showToast('🔄 Reset! Try again!');
+}
+
+// ─── SECTION 4: ROLEPLAY ──────────────────────────────────
+const fruits=[
+  {name:'🍓 Strawberries',near:'these',far:'those'},
+  {name:'🥝 Kiwis',near:'these',far:'those'},
+  {name:'🟠 Kumquats',near:'these',far:'those'},
+  {name:'🍌 Bananas',near:'these',far:'those'},
+  {name:'🍐 Pears',near:'these',far:'those'},
+  {name:'🥭 Mangos',near:'these',far:'those'},
+  {name:'🍊 Oranges',near:'these',far:'those'},
+  {name:'🍇 Grapes',near:'these',far:'those'},
+  {name:'🍋 Lemons',near:'these',far:'those'},
+];
+
+function getRand(arr){return arr[Math.floor(Math.random()*arr.length)];}
+
+function generateRoles() {
+  const f1=getRand(fruits),f2=getRand(fruits),f3=getRand(fruits);
+  const cards=['rc-seller','rc-buyer1','rc-buyer2'];
+  cards.forEach(id=>{
+    const el=document.getElementById(id);
+    el.classList.add('spinning');
+    setTimeout(()=>el.classList.remove('spinning'),650);
+  });
+  setTimeout(()=>{
+    document.getElementById('rf-seller').textContent=`🛒 Stock: ${f1.name}, ${f2.name}, ${f3.name}`;
+    document.getElementById('rl-seller').textContent='Describe your fruits. Use "This is..." and "These are..."';
+    document.getElementById('rf-buyer1').textContent=`🛍️ Buy: ${f1.name} (near you)`;
+    document.getElementById('rl-buyer1').textContent=`Say: "Excuse me. What are ${f1.near}?" / "I want a box of ${f1.near}."`;
+    document.getElementById('rf-buyer2').textContent=`🛍️ Buy: ${f2.name} (far from you)`;
+    document.getElementById('rl-buyer2').textContent=`Say: "What are ${f2.far}?" / "I want some of ${f2.far}, please."`;
+    showToast('🎭 Roles assigned! Start your roleplay!',2800);
+  },400);
+}
+
+// ─── POPUP ────────────────────────────────────────────────
+const vitaminFacts=[
+  {title:'🍎 Red Fruits', body:'Red fruits like strawberries and apples are packed with Vitamin C. They keep your heart strong and your skin healthy!'},
+  {title:'🟡 Yellow Fruits', body:'Yellow fruits like bananas and mangos are rich in Vitamin A. They protect your eyes and give you lots of energy!'},
+  {title:'🟢 Green Fruits', body:'Green fruits like kiwi keep your bones strong and help your body fight illness. Kiwi has more Vitamin C than an orange!'},
+  {title:'🟣 Purple Fruits', body:'Purple grapes and plums protect your brain and memory. They contain special nutrients called antioxidants!'},
+  {title:'🔵 Blueberries', body:'Blueberries are tiny but super powerful! They improve your memory and concentration — perfect brain food for school!'},
+];
+let factIdx=0;
+
+function showVitaminFact() {
+  const f=vitaminFacts[factIdx%vitaminFacts.length];factIdx++;
+  document.getElementById('popupTitle').textContent=f.title;
+  document.getElementById('popupBody').textContent=f.body;
+  document.getElementById('popupOverlay').classList.add('show');
+}
+
+function closePopup(e){if(e.target===document.getElementById('popupOverlay'))closePopupBtn();}
+function closePopupBtn(){document.getElementById('popupOverlay').classList.remove('show');}
+</script>
+</body>
+</html>
